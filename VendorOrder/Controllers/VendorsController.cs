@@ -5,14 +5,14 @@ using VendorOrder.Models;
 
 namespace VendorOrder.Controllers
 {
-  public class VendorsController : Controllers
+  public class VendorsController : Controller
   {
 
     [HttpGet("/vendors")]
     public ActionResult Index()
     {
       List<Vendor> allVendors = Vendor.GetAll();
-      return View(allCategories);
+      return View(allVendors);
     }
 
     [HttpGet("/vendors/new")]
@@ -22,9 +22,9 @@ namespace VendorOrder.Controllers
     }
 
     [HttpPost("/vendors")]
-    public ActionResult Create(string vendorName)
+    public ActionResult Create(string vendorName, string vendorDescription)
     {
-      Vendor newVendor = new Vendor(vendorName);
+      Vendor newVendor = new Vendor(vendorName, vendorDescription);
       return RedirectToAction("Index");
     }
 
@@ -40,11 +40,11 @@ namespace VendorOrder.Controllers
     }
 
     [HttpPost("/vendors/{vendorId}/orders")]
-    public ActionResult Create(int vendorId, string orderTitle)
+    public ActionResult Create(int vendorId, string orderDescription, double orderPrice, string date)
     {
       Dictionary<string, object> model = new Dictionary<string, object>();
       Vendor foundVendor = Vendor.Find(vendorId);
-      Order newOrder = new Order(orderTitle);
+      Order newOrder = new Order(orderDescription, orderPrice, date);
       foundVendor.AddOrder(newOrder);
       List<Order> vendorOrders = foundVendor.Orders;
       model.Add("orders", vendorOrders);
