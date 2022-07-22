@@ -66,6 +66,18 @@ namespace VendorOrder.Tests
 
       CollectionAssert.AreEqual(newList, result);
     }
-    
+
+    [TestMethod]
+    public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
+    {
+        //Arrange
+      string description = "test";
+      Order newOrder = new Order(description);
+       
+      int result = newOrder.Id;
+
+
+      Assert.AreEqual(1, result);
+    }
   }
 }
