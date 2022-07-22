@@ -7,13 +7,18 @@ namespace VendorOrder.Models
   public class Order
   {
     public string Description { get; set; }
+    public string Title { get; set; }
+    public double Price { get; set; }
+    public string Date { get; set; }
     public int Id { get; }
-    // double price
     private static List<Order> _instances = new List<Order> {};
 
-    public Order (string description)
+    public Order (string title, string description, double price, string date)
     {
       Description = description;
+      Title = title;
+      Price = price;
+      Date = date;
       _instances.Add(this);
       Id = _instances.Count;
 
