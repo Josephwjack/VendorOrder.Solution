@@ -1,6 +1,6 @@
-# Project Name
+# Pierre's Vendor & Order Tracker
 
-#### By (Joseph Jack)
+#### By _Joseph Jack_
 
 ## Description
 
@@ -21,7 +21,7 @@
 2. Navigate to project directory from your terminal by entering the following:
 
 ```
-cd CSharpTemplate.Solution
+cd VendorOrder.Solution
 ```
 
 * Install `Microsoft .NET SDK 5.0`
@@ -35,11 +35,10 @@ cd CSharpTemplate.Solution
 * Any known issues
 
 
+## Copyright
+
+Copyright &copy; Joseph Jack 2022
 ## License
 
 * MIT
-
-## Copyright
-
-&copy; Joseph Jack 2022
 
