@@ -5,18 +5,18 @@ using VendorOrder.Models;
 namespace VendorOrder.Tests
 {
   [TestClass]
-  public class VendorTests : IDisposable
+  public class VendorTests 
   {
-    public void Dispose()
-    {
-      Vendor.ClearAll();
-    }
+    // public void Dispose()
+    // {
+    //   Vendor.ClearAll();
+    // }
 
     [TestMethod]
-    public void NameOfMethodWeAreTesting_DescriptionOfBehavior_ExpectedReturnValue()
+    public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      // any necessary logic to prep for test; instantiating new classes, etc.
-      Assert.AreEqual(EXPECTED RESULT, CODE TO TEST);
+      Vendor newVendor = new Vendor("test");
+      Assert.AreEqual(typeof(Vendor), newVendor.GetType());
     }
   }
 }
