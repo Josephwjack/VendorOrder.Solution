@@ -1,5 +1,5 @@
 # Pierre's Vendor & Order Tracker
-![PierresLogo](/VendorOrder/wwwroot/img/pierre.png)
+![PierresLogo](/VendorOrder/wwwroot/img/pierre.jpg)
 
 #### By _Joseph Jack_
 
