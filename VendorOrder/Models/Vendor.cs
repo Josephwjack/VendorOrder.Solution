@@ -2,6 +2,7 @@ using System.Collections.Generic;
 
 namespace VendorOrder.Models
 {
+  
   public class Vendor
   {
     private static List<Vendor> _instances = new List<Vendor> {};
@@ -25,6 +26,10 @@ namespace VendorOrder.Models
       return _instances;
     }
 
+    public static Vendor Find(int searchId)
+    {
+      return _instances[searchId-1];
+    }
 
   }
 }
