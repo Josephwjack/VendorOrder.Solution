@@ -51,5 +51,12 @@ namespace VendorOrder.Controllers
       model.Add("vendor", foundVendor);
       return View("Show", model);
     }
+
+    [HttpPost("/vendor/delete")]
+    public ActionResult DeleteAll()
+    {
+      Vendor.ClearAll();
+      return View();
+    }
   }
 }
