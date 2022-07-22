@@ -1,0 +1,16 @@
+@{
+  Layout = "_Layout";
+}
+
+<h1>@Model["vendor"].VendorName -- Order Details: </h1>
+
+    <h2>Order Summary:@Model["order"].Description</h2>
+    <h2>$@Model["order"].Price</h2>
+    <h3>Date ordered:@Model["order"].Date</h3>
+
+    <a href='/vendors/{vendorId}/orders'>Back to this vendors order list</a>
+    <br>
+    <a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order for this vendor</a>
+    <br>
+    <br>
+    <a href='/vendors'>View all vendors</a>

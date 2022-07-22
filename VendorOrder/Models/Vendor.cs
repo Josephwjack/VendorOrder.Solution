@@ -31,9 +31,9 @@ namespace VendorOrder.Models
       return _instances;
     }
 
-    public static Vendor Find(int searchId)
+    public static Vendor Find(int Id)
     {
-      return _instances[searchId-1];
+      return _instances[Id - 1];
     }
 
     public void AddOrder(Order order)
