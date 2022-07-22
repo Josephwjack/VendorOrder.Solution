@@ -29,9 +29,8 @@ namespace VendorOrder
     {
 
       app.UseDeveloperExceptionPage(); 
-      
+      app.UseStaticFiles();
       app.UseRouting();
-
       app.UseEndpoints(routes =>
       {
         routes.MapControllerRoute("default", "{controller=Home}/{action=Index}/{id?}");
