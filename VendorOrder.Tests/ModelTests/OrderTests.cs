@@ -92,5 +92,6 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(newOrder2, result);
     }
+
   }
 }

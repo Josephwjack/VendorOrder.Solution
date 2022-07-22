@@ -66,15 +66,29 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void Find_ReturnsCorrectVendor_Vendor()
     {
-      string name01 = "bakeshop";
-      string name02 = "theunbakedshop";
-      Vendor newVendor1 = new Vendor(name01);
-      Vendor newVendor2 = new Vendor(name02);
+      string vendorName01 = "bakeshop";
+      string vendorName02 = "theunbakedshop";
+      Vendor newVendor1 = new Vendor(vendorName01);
+      Vendor newVendor2 = new Vendor(vendorName02);
 
       Vendor result = Vendor.Find(2);
 
       Assert.AreEqual(newVendor2, result);
     }
 
+    [TestMethod]
+    public void AddOrder_ConnectsOrderWithCorrectVendor_OrderList()
+    {
+      string description = "testorder1";
+      Order newOrder = new Order(description);
+      List<Order> newList = new List<Order> { newOrder };
+      string vendorName = "bakedshop";
+      Vendor newVendor = new Vendor(vendorName);
+      newVendor.AddOrder(newOrder);
+
+      List<Order> result = newVendor.Orders;
+
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }
