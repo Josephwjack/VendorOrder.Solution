@@ -75,5 +75,6 @@ namespace VendorOrder.Tests
 
       Assert.AreEqual(newVendor2, result);
     }
+
   }
 }

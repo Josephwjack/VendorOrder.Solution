@@ -70,7 +70,7 @@ namespace VendorOrder.Tests
     [TestMethod]
     public void GetId_OrdersInstantiateWithAnIdAndGetterReturns_Int()
     {
-        //Arrange
+      
       string description = "test";
       Order newOrder = new Order(description);
        
@@ -78,6 +78,19 @@ namespace VendorOrder.Tests
 
 
       Assert.AreEqual(1, result);
+    }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectOrder_Order()
+    {
+      string description01 = "test2";
+      string description02 = "test3";
+      Order newOrder1 = new Order(description01);
+      Order newOrder2 = new Order(description02);
+
+      Order result = Order.Find(2);
+
+      Assert.AreEqual(newOrder2, result);
     }
   }
 }
